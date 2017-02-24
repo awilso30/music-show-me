@@ -1,0 +1,3 @@
+"# music-show-me" 
+
+With the advent of apps such as Bandsintown, Songkick and Spotify we have access to a wealth of music information, but there's no simple solution to just see what artists are playing in your city. This is an application I've been wanting to make for myself for years. At this time, the app pulls local Chicago music artist information using JSON and data from open source API Jambase. I engineered this using HTML, CSS, Javascript and JQuery with a mobile-first approach to ensure consistent performance across all devices. In the future I hope to finish and optimize the visual design, implement filters for certain genres or venues and expand into more cities.
