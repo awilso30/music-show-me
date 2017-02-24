@@ -13,11 +13,11 @@ function date() {
 
 function getShowData() {
   $.ajax({
-    url: "http://api.jambase.com/events?zipCode=60601&radius=25&startDate=02%2F18%2F2017&endDate=02%2F24%2F2017&page=0&api_key=mduggk46nj2xrdn3x4hz3eqd&o=json",
-    
-    dataType: "json",
+    url: "http://api.jambase.com/events?zipCode=60601&radius=25&startDate=02%2F18%2F2017&endDate=02%2F24%2F2017&page=0&api_key=mduggk46nj2xrdn3x4hz3eqd&o=jsonp",
+
+    dataType: "jsonp",
     data: {
-      format: "json"
+      format: "jsonp"
     },
     success: function (data) {      
       var events = data.Events; 
