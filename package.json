@@ -1,0 +1,19 @@
+{
+  "name": "music-show-me",
+  "version": "1.0.0",
+  "description": "Concert/Music Show app. Display artists playing in Chicago for a given date",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awilso30/music-show-me.git"
+  },
+  "author": "Alex W",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awilso30/music-show-me/issues"
+  },
+  "homepage": "https://github.com/awilso30/music-show-me#readme"
+}
