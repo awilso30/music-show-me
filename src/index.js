@@ -1,19 +1,34 @@
-$(document).ready(function() {
+$(document).ready(function() {  
 
-function date() {
   var dateObj = new Date();
-  var month = dateObj.getUTCMonth() + 1; //months from 1-12
+  var month = dateObj.getUTCMonth() + 1;
   var day = dateObj.getUTCDate();
-  var year = dateObj.getUTCFullYear();
+  var year = dateObj.getUTCFullYear();  
 
-  $(".date-container").append(month);
-  $(".date-container").append(" / ");
-  $(".date-container").append(day);
-}
+  if (day.length < 2) {    
+    day = "0" + day;    
+  } else {
+    day = day;
+  }
 
-function getShowData() {
+  if (month.length != 2) {
+    if (month.length = 1) {
+      month = "0" + month;
+    }
+  } else {
+    month = month;
+  }
+
+  var todaysDate = month + " / " + day + " / " + year;  
+
+  $(".date-container").append(todaysDate);
+
+function getShowData() {  
+
+  var url = "https://cors-anywhere.herokuapp.com/http://api.jambase.com/events?zipCode=60601&radius=25&startDate=" + month + "%2F" + day + "%2F" + year + "&endDate=" + month + "%2F" + day + "%2F" + year + "&page=0&api_key=mduggk46nj2xrdn3x4hz3eqd&o=json"
+
   $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/http://api.jambase.com/events?zipCode=60601&radius=25&startDate=02%2F18%2F2017&endDate=02%2F24%2F2017&page=0&api_key=mduggk46nj2xrdn3x4hz3eqd&o=json",
+    url: url,
     dataType: "json",
     data: {
       format: "json"
@@ -37,8 +52,8 @@ function getShowData() {
       console.log("unable to access json");
     }
   });
-}
+}  
 
-  date();
   getShowData();
+
 });
