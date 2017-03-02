@@ -1,5 +1,14 @@
 $(document).ready(function() {  
 
+$( "#datepicker" ).datepicker();
+
+$.datepicker.setDefaults({
+  showOn: "both",
+  buttonImageOnly: true,
+  buttonImage: "calendar.gif",
+  buttonText: "Calendar"
+});
+
 // get current local date
   var dateObj = new Date();
   var month = dateObj.getMonth() + 1;
@@ -26,9 +35,12 @@ $(document).ready(function() {
 
   $(".date-container").append(todaysDate);
 
+  var endDay = day += 7;
+  console.log(endDay);
+
 function getShowData() {  
 
-  var url = "https://cors-anywhere.herokuapp.com/http://api.jambase.com/events?zipCode=60601&radius=25&startDate=" + month + "%2F" + day + "%2F" + year + "&endDate=" + month + "%2F" + day + "%2F" + year + "&page=0&api_key=mduggk46nj2xrdn3x4hz3eqd&o=json"
+  var url = "https://cors-anywhere.herokuapp.com/http://api.jambase.com/events?zipCode=60601&radius=25&startDate=" + month + "%2F" + day + "%2F" + year + "&endDate=" + month + "%2F" + endDay + "%2F" + year + "&page=0&api_key=mduggk46nj2xrdn3x4hz3eqd&o=json"
 
   $.ajax({
     url: url,

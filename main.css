@@ -23,7 +23,7 @@ header {
   width: 300px;
   text-align: right;
 }
-.date-container {  
+#datepicker {  
   flex-shrink: 1;
   flex-grow: 1;
   padding: 20px;
@@ -88,13 +88,13 @@ ul {
     padding: 5px;
   }
   .filter-container,
-  .date-container {
+  #datepicker {
     order: 3;
   }
   .filter-container {
     width: 25%;
   }
-  .date-container {
+  #datepicker {
     width: 50%;
   }
 }
