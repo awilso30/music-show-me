@@ -1,16 +1,19 @@
 $(document).ready(function() {  
 
+// get current local date
   var dateObj = new Date();
-  var month = dateObj.getUTCMonth() + 1;
-  var day = dateObj.getUTCDate();
-  var year = dateObj.getUTCFullYear();  
+  var month = dateObj.getMonth() + 1;
+  var day = dateObj.getDate();  
+  var year = dateObj.getFullYear();  
 
-  if (day.length < 2) {    
-    day = "0" + day;    
+// make sure all dates are at least 2 digits long in order to plug into api
+ if (day.length != 2) {
+    if (day.length = 1) {
+      day = "0" + day;
+    }
   } else {
-    day = day;
+    month = month;
   }
-
   if (month.length != 2) {
     if (month.length = 1) {
       month = "0" + month;
