@@ -8,7 +8,7 @@ header {
   flex-wrap: nowrap;
   background: #000;
   color: white;
-  font: bold 1rem Georgia,serif;
+  font: bold 1rem Georgia, serif;
 }
 .logo-container {  
   flex-shrink: 2;
@@ -27,7 +27,12 @@ header {
   flex-shrink: 1;
   flex-grow: 1;
   padding: 20px;
+  padding-top: 20px;
   text-align: center;
+}
+.datepicker-container {
+  padding-top: 20px;
+  display: inline-block;
 }
 .filter-container {  
   flex-shrink: 1;
@@ -80,21 +85,20 @@ ul {
     flex-wrap: wrap;
   }
   .logo-container {
-    width: 50%;
+    order: 1;
+    width: 49%;
   }
   .account-container {
-    order: 2;
-    width: 50%;    
-    padding: 5px;
-  }
-  .filter-container,
-  .date-container {
-    order: 3;
-  }
-  .filter-container {
-    width: 25%;
+    order: 1;
+    width: 49%;        
   }
   .date-container {
+    order: 8;
     width: 50%;
   }
+  .filter-container {
+    order: 4;
+    width: 100%;
+    text-align: center;
+  }  
 }
