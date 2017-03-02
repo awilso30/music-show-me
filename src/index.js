@@ -1,13 +1,39 @@
 $(document).ready(function() {  
 
-$( "#datepicker" ).datepicker();
 
-$.datepicker.setDefaults({
-  showOn: "both",
-  buttonImageOnly: true,
-  buttonImage: "calendar.gif",
-  buttonText: "Calendar"
+var userStartDate, userEndDate;
+
+$("#startDate").datepicker({ 
+  dateFormat: "mm-dd-yy",
+  appendText: " Start",  
+  showOtherMonths: true, 
+  selectOtherMonths: true,
+  showAnim: "slideDown",
+  autoSize: true,
+  onSelect: function() {
+        userStartDate = $(this).val();        
+        }
 });
+
+$("#endDate").datepicker({ 
+  dateFormat: "mm-dd-yy",
+  appendText: " End",
+  maxDate: "+1m",
+  showOtherMonths: true, 
+  selectOtherMonths: true,
+  showAnim: "slideDown",
+  autoSize: true,
+  onSelect: function() {
+        userEndDate = $(this).val();        
+        }
+});
+
+$("#searchButton").on("click", function() {
+  
+  console.log(userStartDate + " " + userEndDate);
+});
+
+/* DEPRECATED DATE GETTER
 
 // get current local date
   var dateObj = new Date();
@@ -33,10 +59,7 @@ $.datepicker.setDefaults({
 
   var todaysDate = month + " / " + day + " / " + year;  
 
-  $(".date-container").append(todaysDate);
-
-  var endDay = day += 7;
-  console.log(endDay);
+  $(".date-container").append(todaysDate);  
 
 function getShowData() {  
 
@@ -67,8 +90,8 @@ function getShowData() {
       console.log("unable to access json");
     }
   });
-}  
+} 
 
-  getShowData();
+*/   
 
 });
