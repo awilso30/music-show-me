@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+// setup and get user input for start of date range
 $("#startdate").datepicker({ 
   dateFormat: "mm-dd-yy",
   appendText: " Start",  
@@ -9,6 +10,7 @@ $("#startdate").datepicker({
   autoSize: true,  
 });
 
+// setup and get user input for end of date range
 $("#enddate").datepicker({ 
   dateFormat: "mm-dd-yy",
   appendText: " End",
@@ -19,23 +21,25 @@ $("#enddate").datepicker({
   autoSize: true,
 });
 
-$("#searchbutton").on("click", function() {
-    
+// when user clicks search
+$("#searchbutton").on("click", function() {    
+  // set start and end values
   startDate = $("#startdate").val();
   endDate = $("#enddate").val();
-
-  $("#date-container").append("<br>" + startDate + " - " + endDate); 
-
+  // append for visual representation
+  $(".currentdate").append("<br>" + startDate + " - " + endDate); 
+  // pass data along to api call
   getShowData(startDate, endDate);   
-
 });  
 
+// get artists
 function getShowData() {  
-
+  // format data for url
   var formatStartDate = startDate.split("-")
   var formatEndDate = endDate.split("-")  
 
-  var url = "https://cors-anywhere.herokuapp.com/http://api.jambase.com/events?zipCode=60601&radius=25&startDate=" + formatStartDate[0] + "%2F" + formatStartDate[1] + "%2F" + formatStartDate[2] + "&endDate=" + formatEndDate[0] + "%2F" + formatEndDate[1] + "%2F" + formatEndDate[2] + "&page=0&api_key=mduggk46nj2xrdn3x4hz3eqd&o=json"  
+  // final url
+  var url = "https://cors-anywhere.herokuapp.com/http://api.jambase.com/events?zipCode=60601&radius=25&startDate=" + formatStartDate[0] + "%2F" + formatStartDate[1] + "%2F" + formatStartDate[2] + "&endDate=" + formatEndDate[0] + "%2F" + formatEndDate[1] + "%2F" + formatEndDate[2] + "&page=0&api_key=mduggk46nj2xrdn3x4hz3eqd&o=json"    
 
   $.ajax({
     url: url,
@@ -51,9 +55,10 @@ function getShowData() {
       for (var i = 0; i < events.length; i++) {
         artists.push(events[i].Artists[0].Name);        
       }
-      
+      // clear previous artist list
+      $("#artistlist").html("");
       // create a list of all artists playing that day
-      artists.map(function(artist) {
+      artists.map(function(artist) {        
         $("#artistlist").append("<li>" + artist + "</li>");
       });
 
