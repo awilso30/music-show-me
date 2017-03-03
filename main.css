@@ -24,11 +24,13 @@ header {
   text-align: right;
 }
 .date-container {  
+  display: flex;
   flex-shrink: 1;
   flex-grow: 1;
+  flex-wrap: nowrap;
   padding: 20px;
   padding-top: 20px;
-  text-align: center;
+  text-align: center;  
 }
 .datepicker-container {
   padding-top: 20px;
@@ -63,7 +65,7 @@ ul {
   li {
     border: 1px solid rgb(100, 0, 0);
   }
-#rainbowList    { 
+#artistlist    { 
   background: red;
   list-style: none; 
   width: 100%;  
@@ -71,7 +73,7 @@ ul {
   margin: 0;
   padding: 0;
 }
-#rainbowList li { 
+#artistlist li { 
   background-color: #ddd;                    
   color: #333;  
   text-align: center;
