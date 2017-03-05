@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font: 1rem Helvetica, serif;
 }
 
 header {
@@ -20,6 +21,8 @@ header {
 }
 
 .logo {
+    margin: 0;
+    padding: 0;
     color: #6F3E83;
     font-size: 47px;
     text-transform: uppercase;
@@ -42,9 +45,7 @@ header {
 }
 
 .filter-container {
-    flex-shrink: 1;
-    flex-grow: 0;
-    padding: 20px;
+    padding: 10px;
     text-align: right;
 }
 
@@ -79,7 +80,7 @@ ul {
 }
 
 li {
-    border: 1px solid rgb(100, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
 }
 
 #artistlist {
@@ -106,18 +107,23 @@ li {
     }
     .logo-container {
         order: 1;
-        width: 49%;
+        width: 50%;
+        padding: 5px;
     }
     .account-container {
-        order: 1;
-        width: 49%;
+        padding: 10px;
+        order: 2;
+        width: 50%;
     }
     .date-container {
-        order: 8;
+        padding: 5px;
+        order: 3;
         width: 50%;
     }
     .filter-container {
-        order: 4;
+        margin: 0;
+        padding: 0;
+        order: 5;
         width: 100%;
         text-align: center;
     }

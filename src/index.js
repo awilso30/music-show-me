@@ -55,6 +55,8 @@ function getShowData() {
       }
       // clear previous artist list
       $("#artistlist").html("");
+      // add filter option
+      $("#artistlist").append("<div class='filter-container'>Filter</div>");
       // create a list of all artists playing that day
       artists.map(function(artist) {
         $("#artistlist").append("<li>" + artist + "</li>");
