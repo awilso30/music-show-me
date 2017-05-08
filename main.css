@@ -53,7 +53,13 @@ header {
     color: #fff;
 }
 
-.account {}
+.search {
+    border: 1px solid white;
+    background: #6F3E83;
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    color: #fff;
+}
 
 .filter-container {
     padding: 10px;
@@ -143,10 +149,6 @@ img {
         order: 5;
         width: 100%;
         text-align: center;
-    }
-    .date-container {
-        display: flex;
-        flex-wrap: nowrap;
     }
 }
 
