@@ -152,7 +152,7 @@ img {
     }
 }
 
-@media (min-width: 920px) {
+@media (min-width: 1320px) {
     header {
         width: 70%;
         margin: auto;
