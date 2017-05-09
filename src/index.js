@@ -54,12 +54,12 @@ function getShowData() {
         artists.push(events[i].Artists[0].Name);
       }
       // clear previous artist list
-      $("#artistlist").html("");
+      $(".artist-container").html("");
       // add filter option
-      $("#artistlist").append("<div class='filter-container'>Filter</div>");
+      // $(".artist-container").append("<div class='filter-container'>Filter</div>");
       // create a list of all artists playing that day
       artists.map(function(artist) {
-        $("#artistlist").append("<li>" + artist + "</li>");
+        $(".artist-container").append("<div class='artist-panel'><div class='artist-left'><img class='list-button' id='arrow' src='arrow.svg'>" + artist + "</div><div class='artist-right'>05/24/2017 <img class='list-button' id='heart' src='heart.svg'><img class='list-button' id='remove' src='remove.svg'><img class='list-button' id='minus' src='minus.svg'></div></div>");
       });
 
     },
